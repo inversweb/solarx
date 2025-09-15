@@ -1,0 +1,116 @@
+// Brand Style Here
+.tmp-brand-area{
+    .section-inner{
+        .brand-wrapper{
+            transition: var(--transition);
+            &:hover{
+                img{
+                    opacity: 1;
+                }
+            }
+            img{
+                opacity: .4;
+                transition: var(--transition);
+            }
+        }
+    }
+    &.area-3{
+        padding: 70px 0 65px;
+        img{
+            opacity: 1 !important;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(45deg) brightness(108%) contrast(102%);
+        }
+    }
+    &.area-4{
+        img{
+            filter: brightness(0) saturate(100%) invert(59%) sepia(57%) saturate(436%) hue-rotate(39deg) brightness(96%) contrast(83%);
+        }
+    }
+    &.area-5{
+        background: rgba(242, 245, 233, 0.58);
+        img{
+            filter: brightness(0) saturate(100%) invert(59%) sepia(57%) saturate(436%) hue-rotate(39deg) brightness(96%) contrast(83%);
+        }
+    }
+}
+
+.clients-wrapper{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: var(--transition);
+    &:hover{
+        .text{
+            background: rgba(#87AB42, $alpha: .1);
+        }
+        .image{
+            .content{
+                top: 0;
+            }
+        }
+    }
+    .text{
+        writing-mode: sideways-lr;
+        text-align: center;
+        background: var(--color-white);
+        padding: 0 10px;
+        transition: var(--transition);
+        h6{
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 1;
+        }
+    }
+    .image{
+        position: relative;
+        z-index: 1;
+        .brand{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(#000000, $alpha: .31);
+        }
+        .content{
+            background: var(--color-white);
+            height: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 35px;
+            position: absolute;
+            z-index: 3;
+            top: -102%;
+            left: 0;
+            transition: var(--transition);
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 10px;
+                li{
+                    margin: 0;
+                    color: #FF9500;
+                }
+            }
+            .desc{
+                font-size: 20px;
+                line-height: 36px;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.tmp-bread-crumb-area{
+    .breadcrumb-inner{
+        position: relative;
+        z-index: 1;
+        .watermark{
+            color: black;
+            -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #E4E4E4;
+            font-size: 160px;
+            line-height: 1;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            opacity: .7;
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: max-content;
+        }
+        .title{
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .desc{
+            max-width: 519px;
+            margin: auto;
+            margin-bottom: 40px;
+        }
+        .meta{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            a{
+                font-weight: 600;
+                color: #717580;
+                &.next{
+                    opacity: .64;
+                }
+            }
+        }
+    }
+}
