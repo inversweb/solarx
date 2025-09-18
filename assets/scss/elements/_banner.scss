@@ -35,6 +35,9 @@
             height: 100%;
             z-index: -1;
             clip-path: polygon(226.165px -9px, 855px -9px, 855px 770px, 0px 770px, 226.165px -9px); 
+            @media #{$mdsm-layout} {
+                object-fit: cover;
+            }
         }
     }
 
@@ -327,6 +330,18 @@
     position: relative;
     z-index: 1;
     height: 860px;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: #00000091;
+        z-index: -1;
+    }
     .banner-hero-image{
         position: absolute;
         z-index: 1;
@@ -377,6 +392,9 @@
         top: 20px;
         bottom: unset;
         left: 11%;
+        @media #{$large-mobile} {
+            display: none;
+        }
     }
 
     .banner-one-wrapper {
@@ -675,6 +693,9 @@
                     transition-delay: .8s;
                     display: block;
                     animation: none;
+                    @media #{$mdsm-layout} {
+                        font-size: 54px;
+                    }
                 }
                 .desc{
                     opacity: 0;
@@ -2502,6 +2523,9 @@
             transition-delay: .2s;
             opacity: 0;
             animation: none; 
+            @media #{$large-mobile} {
+                display: none;
+            }
         }
         .banner-shape img:nth-child(2){
             transition-delay: .2s;

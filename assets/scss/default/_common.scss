@@ -5,7 +5,8 @@ body {
     scroll-behavior: auto;
     background: #ffffff;
     overflow-x: hidden;
-    padding: 0 !important;
+    padding: 0;
+    padding-right: 0 !important;
     // &::-webkit-scrollbar {
     //     display: none;
     // }
@@ -390,13 +391,13 @@ body{
             font-family: var(--font-primary);
             position: relative;
             z-index: 1;
-            padding-left: 35px;
+            padding-left: 50px;
             &::after{
-                content: '';
+                content: "";
                 position: absolute;
-                width: 25px;
+                width: 40px;
                 height: 1px;
-                background: var(--color-primary);
+                background: linear-gradient(-90deg, var(--color-primary), rgba(33, 38, 45, 0));
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
@@ -456,20 +457,20 @@ body{
         &::before{
             content: '';
             position: absolute;
-            width: 25px;
+            width: 56px;
             height: 1px;
-            background: var(--color-primary);
-            left: 0;
+            background: linear-gradient(-90deg, var(--color-primary), rgba(33, 38, 45, 0));
+            left: -30px;
             top: 50%;
             transform: translateY(-50%);
         }
         &::after{
-            content: '';
+            content: "";
             position: absolute;
-            width: 25px;
+            width: 56px;
             height: 1px;
-            background: var(--color-primary);
-            right: 0;
+            background: linear-gradient(90deg, var(--color-primary), rgba(33, 38, 45, 0));
+            right: -30px;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -534,6 +535,20 @@ ul{
 .slider-img-seven{
     background: url(../images/banner/12.webp);
 }
+.slider-img-ten{
+    background: url(../images/banner/25.webp);
+}
+.slider-img-nine{
+    background: url(../images/banner/26.webp);
+}
+
+.slider-img-01{
+    background: url(../images/bg/01.webp);
+}
+.slider-img-02{
+    background: url(../images/bg/02.webp);
+}
+
 .slider-img-eight{
     background: url(../images/banner/19.webp);
     &::after{

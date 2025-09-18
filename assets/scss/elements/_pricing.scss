@@ -101,16 +101,24 @@
     }
 }
 .tmp-pricing-area.area-2{
-    padding: 80px 0 200px;
     position: relative;
     z-index: 1;
     .pricing-hero{
-        position: absolute;
-        left: 0;
-        top: 0;
+        img{
+            @media #{$smlg-device} {
+                width: 100%;
+            }
+        }
     }
     .pricing-inner{
         margin-left: 120px;
+        @media #{$laptop-device} {
+            margin-left: 30px;
+        }
+        @media #{$smlg-device} {
+            margin-left: 0;
+            margin-top: 40px;
+        }
     }
 }
 .pricing-wrapper2{
@@ -155,7 +163,7 @@
     }
     .accordion-body{
         padding: 0;
-        margin-top: 15px;
+        padding-top: 15px;
         .desc{
             max-width: 400px;
             margin-bottom: 20px;

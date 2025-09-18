@@ -55,6 +55,11 @@ header {
                 .info {
                     span {
                         color: var(--color-white);
+                        a{
+                            &:hover{
+                                color: unset;
+                            }
+                        }
                     }
                 }
             }
@@ -2166,11 +2171,11 @@ header {
     position: fixed !important;
     top: 0;
     display: block;
-    z-index: 1000;
+    z-index: 50;
     width: 100%;
     background: #fff;
     box-shadow: 0px 7px 18px #1810100d;
-
+    animation: headerSticky 0.95s ease forwards;
     .header-top {
         display: none;
     }
@@ -2184,5 +2189,15 @@ header {
         .header-main {
             margin-top: 0;
         } 
+    }
+}
+
+@keyframes headerSticky {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
