@@ -98,6 +98,19 @@
     z-index: 99999;
     background-color: var(--color-white);
 
+
+
+    visibility: hidden;
+    clip: rect(0px, 200vw, 0, 0px);
+    transform-origin: 0 0 0;
+    &.offcanvas.show {
+        transform: scaleY(1);
+        visibility: visible !important;
+        opacity: 1;
+        clip: rect(0px, 100vw, 200vh, -30px);
+        transition: clip 0.6s linear, opacity 0.4s linear;
+        display: block;
+    }
     .tf-container {
         max-width: 1440px;
         width: 100%;
@@ -167,26 +180,6 @@
         margin: 24px 0;
     }
 
-    // @include res(md, min) {
-    //     .wrap-form {
-    //         margin-bottom: 40px;
-    //     }
-    //     .tf-line {
-    //         margin: 40px 0;
-    //     }
-    // }
-    // @include res(lg, min) {
-    //     .trending {
-    //         .tf-grid-layout {
-    //             gap: 28px 64px;
-    //             .item-grid {
-    //                 &::before {
-    //                     right: calc((64px / 2) * -1);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 
     .form-search {
         fieldset{
