@@ -1,6 +1,7 @@
 $(function () {
-    //    console.log('initiated');
-    ParallaxScroll.init();
+    if ($(window).width() > 991) {
+        ParallaxScroll.init();
+    }
 });
 
 var ParallaxScroll = {
@@ -39,10 +40,15 @@ var ParallaxScroll = {
         if (this.showLogs) console.log("Parallax Scroll / " + message);
     },
     _onScroll: function (noSmooth) {
+        // ✅ আবারও চেক করা হবে
+        if ($(window).width() <= 991) return;
+
         var scroll = $(document).scrollTop();
         var windowHeight = $(window).height();
         this._log("onScroll " + scroll);
+
         $("[data-parallax]").each($.proxy(function (index, el) {
+            // existing logic unchanged...
             var $el = $(el);
             var properties = [];
             var applyProperties = false;
@@ -176,6 +182,7 @@ var ParallaxScroll = {
                 $el.attr("style", "transform:" + cssTransform + " -webkit-transform:" + cssTransform + " " + style);
             }
         }, this));
+
         if (window.requestAnimationFrame) {
             window.requestAnimationFrame($.proxy(this._onScroll, this, false));
         }

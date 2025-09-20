@@ -32,6 +32,29 @@
 	position: relative;
 }
 
+header.header-seven.inner.sticky {
+    box-shadow: 0px 7px 18px #1810100d;
+}
+
+header.header-seven.inner .header-mid-one-wrapper .nav-area .tmp-mega-menu {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    &.width-small-mega{
+        left: 0;
+        right: auto;
+        margin: 0;
+        width: max-content;
+        &.mega-card-view{
+            left: 0;    
+            right: 0;
+            margin: auto;
+            width: 900px;
+        }
+    }
+}
+
 .has-dropdown.mega-menu>a::after{
 	position: absolute;
 	content: "\f078";
@@ -58,10 +81,29 @@
 	font-size: 14px;
 	transition: all 0.5s;
 }
+.blink-live{
+    padding-left: 18px;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 25%;
+        transform: translateY(-50%);
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background: var(--color-danger);
+        animation: blink 1s linear infinite;
+    }
+    @keyframes blink {
+        0%, 100% {background-color:var(--color-danger);}
+        50% {background-color: #ffffff;}
+    }
+}
 
 .nav-area ul li.main-nav {
 	padding: 37px 20px 37px 0;
-	cursor: pointer;
 }
 header.header-three .main-nav > a {
     color: var(--color-white) !important;
@@ -234,6 +276,16 @@ header .nav-area ul li.main-nav {
             transition: clip 0.6s linear, opacity 0.4s linear;
         }
     }
+    &.active {
+        .tmp-mega-menu {
+            transform: scaleY(1);
+            top: 100%;
+            visibility: visible;
+            opacity: 1;
+            clip: rect(0px, 100vw, 200vh, -30px);
+            transition: clip 0.6s linear, opacity 0.4s linear;
+        }
+    }
 }
 
 .tmp-mega-menu {
@@ -286,6 +338,12 @@ header .nav-area ul li.main-nav {
         width: 600px;
         margin: 0 auto;
         padding: 0;
+        &.mega-card-view{
+            width: 900px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
         .mega-top-banner {
             background-image: url(../images/banner/menu-service.webp), radial-gradient(100% 100% at 100% 0%, #484C7A 0%, var(--color-primary) 100%);
             background-size: contain;

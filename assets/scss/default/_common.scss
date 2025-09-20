@@ -548,6 +548,12 @@ ul{
 .slider-img-02{
     background: url(../images/bg/02.webp);
 }
+.slider-img-28{
+    background: url(../images/banner/28.webp);
+}
+.slider-img-29{
+    background: url(../images/banner/29.webp);
+}
 
 .slider-img-eight{
     background: url(../images/banner/19.webp);
@@ -563,6 +569,13 @@ ul{
     }
 }
 
+p.desc{
+    @media #{$large-mobile} {
+        br{
+            display: none;  
+        }
+    }
+}
 .bg-color-n{
     background: rgba(255, 112, 41, 0.05);
 }
